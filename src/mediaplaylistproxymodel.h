@@ -122,10 +122,7 @@ public:
     [[nodiscard]] int tracksCount() const;
 
     [[nodiscard]] QVariantMap persistentState() const;
-
-    int mSeekToBeginningDelay = 2000;
-
-
+    
 public Q_SLOTS:
 
     void enqueue(const QUrl &entryUrl,
