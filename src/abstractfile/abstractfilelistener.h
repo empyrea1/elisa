@@ -32,11 +32,11 @@ public:
 
     ~AbstractFileListener() override;
 
-    [[nodiscard]] DatabaseInterface* databaseInterface() const;
+    /*[[nodiscard]]*/DatabaseInterface* databaseInterface() const;
 
-    [[nodiscard]] AbstractFileListing* fileListing() const;
+    /*[[nodiscard]]*/AbstractFileListing* fileListing() const;
 
-    [[nodiscard]] bool canHandleRootPaths() const;
+    /*[[nodiscard]]*/bool canHandleRootPaths() const;
 
 Q_SIGNALS:
 
