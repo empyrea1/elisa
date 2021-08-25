@@ -172,20 +172,20 @@ void ElisaApplication::setupActions(const QString &actionName)
 
     if (actionName == QLatin1String("toggle_playlist") && KAuthorized::authorizeAction(actionName)) {
         auto togglePlaylistAction = d->mCollection.addAction(actionName, this, &ElisaApplication::togglePlaylist);
-        togglePlaylistAction->setText(i18n("Toggle Playlist"));
         togglePlaylistAction->setShortcut(QKeySequence(Qt::Key_F9));
+        togglePlaylistAction->setText(i18n("Toggle Playlist"));
     }
 
     if (actionName == QLatin1String("Seek") && KAuthorized::authorizeAction(actionName)) {
             auto seekAction = d->mCollection.addAction(actionName, this, &ElisaApplication::seek);
             seekAction->setText(i18n("Seek forward 10 seconds"));
-            d->mCollection.setDefaultShortcut(seekAction, QKeySequence(Qt::Key_Right));
+            d->mCollection.setDefaultShortcut(seekAction, QKeySequence(Qt::Key_V));
     }
 
     if (actionName == QLatin1String("Scrub") && KAuthorized::authorizeAction(actionName)) {
             auto scrubAction = d->mCollection.addAction(actionName, this, &ElisaApplication::scrub);
             scrubAction->setText(i18n("Scrub backwards 10 seconds"));
-            d->mCollection.setDefaultShortcut(scrubAction, QKeySequence(Qt::Key_Left));
+            d->mCollection.setDefaultShortcut(scrubAction, QKeySequence(Qt::Key_X));
     }
 
     if (actionName == QLatin1String("NextTrack") && KAuthorized::authorizeAction(actionName)) {
