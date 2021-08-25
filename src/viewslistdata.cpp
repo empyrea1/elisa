@@ -17,6 +17,10 @@
 #include <QUrl>
 #include <QDir>
 
+#include <QStandardPaths>
+
+const QString playlistsFolder = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
+
 class ViewsListDataPrivate
 {
 public:
@@ -127,7 +131,7 @@ public:
                                                ViewManager::DelegateWithoutSecondaryText,
                                                ViewManager::ViewHideRating,
                                                ViewManager::IsFlatModel,
-                                               QUrl::fromLocalFile(QDir::homePath())
+                                               QUrl::fromLocalFile(playlistsFolder)
                                               },
 
                                               {{i18nc("Title of the file browser view", "Files")},
