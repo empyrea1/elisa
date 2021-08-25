@@ -172,8 +172,8 @@ void ElisaApplication::setupActions(const QString &actionName)
 
     if (actionName == QLatin1String("toggle_playlist") && KAuthorized::authorizeAction(actionName)) {
         auto togglePlaylistAction = d->mCollection.addAction(actionName, this, &ElisaApplication::togglePlaylist);
-        togglePlaylistAction->setShortcut(QKeySequence(Qt::Key_F9));
         togglePlaylistAction->setText(i18n("Toggle Playlist"));
+        togglePlaylistAction->setShortcut(QKeySequence(Qt::Key_F9));
     }
 
     if (actionName == QLatin1String("Seek") && KAuthorized::authorizeAction(actionName)) {
