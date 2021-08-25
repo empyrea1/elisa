@@ -13,10 +13,10 @@
 #include "models/datamodel.h"
 #include "models/gridviewproxymodel.h"
 
-// #if defined KF5KIO_FOUND && KF5KIO_FOUND
+#if defined KF5KIO_FOUND && KF5KIO_FOUND
 #include "models/filebrowsermodel.h"
 #include "models/filebrowserproxymodel.h"
-// #endif
+#endif
 
 #include "elisa_settings.h"
 
@@ -290,14 +290,14 @@ void ViewManager::openViewFromData(const ViewParameters &viewParamaters)
     {
     case FileBrowserModel:
     {
-// #if defined KF5KIO_FOUND && KF5KIO_FOUND
+#if defined KF5KIO_FOUND && KF5KIO_FOUND
         newModel = new ::FileBrowserModel;
         auto *realProxyModel = new FileBrowserProxyModel;
         proxyModel = realProxyModel;
-// #else
-//         newModel = nullptr;
-//         proxyModel = nullptr;
-// #endif
+#else
+        newModel = nullptr;
+         proxyModel = nullptr;
+#endif
         break;
     }
     case GenericDataModel:
