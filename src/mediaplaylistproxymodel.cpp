@@ -548,11 +548,6 @@ void MediaPlayListProxyModel::skipPreviousTrack(qint64 position)
         return;
     }
 
-    if (position > mSeekToBeginningDelay) {
-        Q_EMIT seek(0);
-        return;
-    }
-
     if (d->mCurrentTrack.row() == 0) {
         if (d->mRepeatMode == Repeat::One || d->mRepeatMode == Repeat::Playlist) {
             d->mCurrentTrack = index(rowCount() - 1, 0);
