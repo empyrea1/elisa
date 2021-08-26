@@ -61,6 +61,7 @@ Kirigami.ApplicationWindow {
     readonly property int initialViewIndex: 3
 
     property var goBackAction: ElisaApplication.action("go_back")
+    property var startCurrentTrackAction: ElisaApplication.action("StartTrack")
     property var seekAction: ElisaApplication.action("Seek")
     property var scrubAction: ElisaApplication.action("Scrub")
     property var nextTrackAction : ElisaApplication.action("NextTrack")
@@ -74,6 +75,11 @@ Kirigami.ApplicationWindow {
     Action {
         shortcut: goBackAction.shortcut
         onTriggered: contentView.goBack()
+    }
+
+    Action {
+        shortcut: startCurrentTrackAction.shortcut
+        onTriggered: ElisaApplication.audioControl.seek(mediaPlayerControl.playerControl.qint64)
     }
 
     Action {
