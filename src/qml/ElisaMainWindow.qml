@@ -79,7 +79,7 @@ Kirigami.ApplicationWindow {
 
     Action {
         shortcut: startCurrentTrackAction.shortcut
-        onTriggered: ElisaApplication.audioControl.seek(mediaPlayerControl.playerControl.qint64)
+        onTriggered: ElisaApplication.audioControl.seek(mediaPlayerControl.playerControl.position)
     }
 
     Action {
