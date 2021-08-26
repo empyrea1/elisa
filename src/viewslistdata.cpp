@@ -17,10 +17,6 @@
 #include <QUrl>
 #include <QDir>
 
-#include <QStandardPaths>
-
-const QString playlistsFolder = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
-
 class ViewsListDataPrivate
 {
 public:
