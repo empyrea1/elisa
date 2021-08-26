@@ -200,6 +200,12 @@ void ElisaApplication::setupActions(const QString &actionName)
             d->mCollection.setDefaultShortcut(previousTrackAction, QKeySequence(Qt::Key_Z));
     }
 
+    if (actionName == QLatin1String("StartTrack") && KAuthorized::authorizeAction(actionName)) {
+            auto startCurrentTrackAction = d->mCollection.addAction(actionName, this, &ElisaApplication::startCurrentTrack);
+            startCurrentTrackAction->setText(i18n("Start Current Track"));
+            d->mCollection.setDefaultShortcut(startCurrentTrackAction, QKeySequence(Qt::Key_C));
+    }
+
     if (actionName == QLatin1String("Play-Pause") && KAuthorized::authorizeAction(actionName)) {
             auto playPauseAction = d->mCollection.addAction(actionName, this, &ElisaApplication::playPause);
             playPauseAction->setText(i18n("Play/pause"));
@@ -336,6 +342,8 @@ void ElisaApplication::scrub() {}
 void ElisaApplication::nextTrack() {}
 
 void ElisaApplication::previousTrack() {}
+
+void ElisaApplication::startCurrentTrack() {}
 
 void ElisaApplication::playPause() {}
 

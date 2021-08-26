@@ -213,6 +213,8 @@ private Q_SLOTS:
 
     void togglePlaylist();
 
+    void startCurrentTrack();
+
     void seek();
 
     void scrub();
