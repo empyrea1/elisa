@@ -17,6 +17,10 @@
 
 #include <memory>
 
+#include <QStandardPaths>
+
+const QString playlistsFolder = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
+
 class QUrl;
 class QString;
 class MusicListenersManager;
